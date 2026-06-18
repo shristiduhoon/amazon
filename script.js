@@ -4,8 +4,8 @@ function addToCart(name, price)
     JSON.parse(localStorage.getItem("cart")) || [];
 
     cart.push({
-        name:name,
-        price:price
+        name: name,
+        price: price
     });
 
     localStorage.setItem(
@@ -13,5 +13,5 @@ function addToCart(name, price)
         JSON.stringify(cart)
     );
 
-    alert("Product Added!");
+    alert(name + " added to cart!");
 }
