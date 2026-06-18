@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Amazon Clone</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#e3e6e6;
+    }
+
+    .navbar{
+      background:#131921;
+      color:white;
+      padding:12px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:35px;
+      font-weight:bold;
+      color:#f3a847;
+      cursor:pointer;
+    }
+
+    .logo:hover{
+      color:#ff9900;
+    }
+
+    .search-box{
+      width:50%;
+    }
+
+    .search-box input{
+      width:100%;
+      padding:8px;
+      border:none;
+      border-radius:4px;
+    }
+
+    .nav-links span{
+      margin-left:15px;
+      cursor:pointer;
+      font-size:14px;
+    }
+
+    .nav-links span:hover{
+      color:#f3a847;
+      text-decoration: underline;
+    }
+
+    .amazon-panel {
+  background: #232f3e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  font-family: Arial, sans-serif;
+}
+
+.panel-center {
+  flex: 1;
+}
+
+.panel-center a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.panel-center a:hover {
+  text-decoration: underline;
+}
+
+.panel-right {
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+    .hero{
+      width:100%;
+      overflow:hidden;
+    }
+
+    .hero img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap:20px;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      padding:15px;
+      border-radius:8px;
+      text-align:center;
+    }
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      margin-bottom:10px;
+    }
+
+    .card h3{
+      font-size:16px;
+      margin-bottom:8px;
+      cursor:pointer;
+    }
+
+    .card h3:hover{
+      color:#c45500;
+      text-decoration: underline;
+    }
+
+    .card p{
+      color:green;
+      margin-bottom:10px;
+    }
+
+    .card button{
+      background-color: darkcyan;
+      border:1px solid #a88734;
+      padding:6px 10px;
+      cursor:pointer;
+      border-radius:4px;
+    }
+
+    .card button:hover{
+      background-color:#ddb347;
+    }
+    a{
+      text-decoration: none;
+      font-size: 20px;
+      color:azure;
+    }
+    a:hover{
+      color: aquamarine;
+    }
+    li{
+      display:inline-block;
+    }
+    .amazon-footer {
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.back-to-top {
+  background: #37475a;
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-to-top:hover {
+  background: #485769;
+}
+
+.footer-links {
+  background: #232f3e;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+.footer-links div {
+  min-width: 200px;
+  margin: 10px 0;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ddd;
+  font-size: 14px;
+  margin: 6px 0;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background: #131a22;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+  </style>
+</head>
+<body>
+<script src="script.js"></script>
+  <div class="navbar">
+    <div class="logo">AMAZON &#x1F499</div>
+    <div class="search-box">
+      <input type="text" placeholder="Search Amazon">
+    </div>
+    <div class="nav-links">
+      <span>Hello, Sign in</span>
+      <span>Orders</span>
+      <span>
+<a href="cart.html">Cart</a>
+</span>
+    </div>
+  </div>
+
+  <div class="amazon-panel">
+  <div class="panel-center">
+    <a href="#">Today's Deals</a>
+    <a href="#">Customer Service</a>
+    <a href="#">Registry</a>
+    <a href="#">Gift Cards</a>
+    <a href="#">Sell</a>
+  </div>
+
+  <div class="panel-right">
+    <span>Profitable Deals</span>
+  </div>
+</div>
+
+
+<div class="hero">
+  <img src="https://m.media-amazon.com/images/G/32/br-events/2023/Consumer_Week/Associates/0288_CW23_associates_cross_2148X588.jpg" alt="Online Shopping Banner">
+</div>
+
+  <div class="products">
+    <div class="card">
+      <img src="https://www.bhphotovideo.com/images/images2000x2000/sony_wh1000xm2_b_1000x_wireless_noise_canceling_headphones_1361028.jpg" alt="Product">
+      <h3>Wireless Headphones</h3>
+      <p>₹2,999</p>
+      <button onclick="addToCart('Wireless Headphones',2999)">
+       Add to Cart
+</button>
+    </div>
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71AcGKTe9+L._AC_SL1500_.jpg" alt="Product">
+      <h3>Smart Watch</h3>
+      <p>₹1,999</p>
+      <button onclick="addToCart('Smart Watch',1999)">
+Add to Cart
+</button>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn.shopify.com/s/files/1/1593/5675/files/Treblab_HD77_2c79bbee-04bf-4387-9c7a-5c405994ba70.jpg?v=1660659007" alt="Product">
+      <h3>Bluetooth Speaker</h3>
+      <p>₹1,499</p>
+      <button onclick="addToCart('Bluetooth Speaker',1499)">
+Add to Cart
+</button>
+    </div>
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71rCnI+l0jL._AC_SL1500_.jpg" alt="Product">
+      <h3>Laptop Backpack</h3>
+      <p>₹899</p>
+      <button onclick="addToCart('Laptop Backpack',899)">
+Add to Cart
+</button>
+    </div>
+    <div class="card">
+  <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
+  <h3>Men's Casual T-Shirt</h3>
+  <p>₹599</p>
+  <button onclick="addToCart('Mens Casual T-Shirt',599)">
+    Add to Cart
+  </button>
+</div>
+<div class="card">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.Uf2eV-SU3foZNNtNugE86AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Handbag">
+  <h3>Stylish Handbag</h3>
+  <p>₹999</p>
+  <button onclick="addToCart('Stylish Handbag',999)">
+    Add to Cart
+  </button>
+</div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500" alt="Dress">
+  <h3>Women's Summer Dress</h3>
+  <p>₹1,499</p>
+  <button onclick="addToCart('Women Summer Dress',1499)">
+    Add to Cart
+  </button>
+</div>
+<div class="card">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.OXDt710ALTed2YGn6ywHPgHaLz?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Sunglasses">
+  <h3>Stylish Sunglasses</h3>
+  <p>₹799</p>
+  <button onclick="addToCart('Stylish Sunglasses',799)">
+    Add to Cart
+  </button>
+</div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
+  <h3>Running Shoes</h3>
+  <p>₹1,899</p>
+  <button onclick="addToCart('Running Shoes',1899)">
+    Add to Cart
+  </button>
+</div>
+<div class="card">
+  <img src=https://www.allrecipes.com/thmb/MPi-cWEZa4mmn8X_5DeyJZ6K7J4=/fit-in/1500x2668/filters:no_upscale():max_bytes(150000):strip_icc()/alr-tier-3-detail-lifestraw-go-series-insulated-stainless-steel-water-filter-bottle-nsimpson-285-998ee9035a8b42a4bb5ad1fbe98d41d3.jpeg alt="Bottle">
+  <h3> Water Bottle</h3>
+  <p>₹399</p>
+  <button onclick="addToCart('Steel Water Bottle',399)">
+    Add to Cart
+  </button>
+</div>
+
+</div>
+  </div>
+<footer class="amazon-footer">
+  <div class="back-to-top">Back to top</div>
+
+  <div class="footer-links">
+    <div>
+      <h4>Get to Know Us</h4>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Press Releases</a>
+      <a href="#">Amazon Science</a>
+    </div>
+
+    <div>
+      <h4>Connect with Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+
+    <div>
+      <h4>Make Money with Us</h4>
+      <a href="#">Sell on Amazon</a>
+      <a href="#">Sell under Amazon Accelerator</a>
+      <a href="#">Protect and Build Your Brand</a>
+      <a href="#">Amazon Global Selling</a>
+    </div>
+
+    <div>
+      <h4>Let Us Help You</h4>
+      <a href="#">Your Account</a>
+      <a href="#">Returns Centre</a>
+      <a href="#">100% Purchase Protection</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025, Amazon Clone by You</p>
+  </div>
+</footer>
+
+</body>
+</html>
